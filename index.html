@@ -1,0 +1,161 @@
+<body>
+  <br></br>
+  <br></br>
+<br></br>
+  <div class="imagen-superior-izquierda">
+    <img src="https://files.catbox.moe/xy2fsl.png" >
+</div>
+
+    <!-- Formulario para buscar grupos -->
+  
+  <div class="busqueda">
+    <div id="searchForm">
+        <form>
+          <div class="centrar">
+            <input type="text" id="searchQuery" class="input-60" placeholder="Busca Anuncios...">
+            <button type="submit" class="btn-search">Buscar</button>
+            </div>
+        </form>
+    </div>
+    <div class="logo">BSZ APP &copy; vercion - 0.0.5</div>
+</div>
+
+  
+ 
+    </div>
+
+<!-- Sección para mostrar los grupos -->
+    <div class="container">      
+        <div class="cuadrado2">   
+         <h3>Lista de Anuncios</h3>
+</div>
+        <section id="groupList">        
+            <div id="groupListContent"></div>
+        </section>
+    </div>
+
+       <!-- Sección para mostrar los grupos -->
+<div class="container">
+      <div class="cuadrado2">   
+   <h3>Post General</h3>
+    </div>
+    <div id="postContainer2" class="post-container">
+        <!-- Los posts se mostrarán aquí -->
+    </div>
+</div>
+      
+    </div>
+<div class="menu">
+        <div class="menu-item">
+            <div class="circle">
+                <i class="fas fa-home"></i>
+            </div>
+            <span>Inicio</span>
+        </div>
+        <div class="menu-item2"  id="openPopup">
+            <div class="circle2">
+                <i class="fas fa-cog"></i> 
+            </div>
+            <span>Config</span>
+        </div>
+        <div class="menu-item" id="openModal">
+            <div class="circle3">
+                <div class="triangle"></div>
+            </div>
+            <span>Crear</span>
+        </div>
+        <div class="menu-item2" id="chatMenuItem">
+            <div class="circle2">
+                <i class="fas fa-comments"></i>
+            </div>
+            <span>Chat</span>
+        </div>
+        <div class="menu-item">
+            <div class="circle">
+                <i class="fas fa-user"></i>
+            </div>
+            <span>Perfil</span>
+        </div>
+    </div>
+
+<div class="popup" id="popupConfig">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Configuración</h2>
+<p>Cambia el fondo de pantalla del index</p>
+            <button class="color-btn" onclick="document.getElementById('fileInput').click()">Seleccionar Imagen</button>
+            <input type="file" id="fileInput" style="display:none" accept="image/*" onchange="applyBackgroundImage(event)">
+    
+        </div>
+    </div>
+
+<!-- Primer Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Opciones de Creación</h2>
+            <p>Selecciona una opción para continuar:</p>
+            <button id="menuAddChat">Crear un aunucio</button>
+               <button id="openPopPost" class="btn-open">Crear post</button>
+        </div>
+    </div>
+  
+   
+
+    <!-- Segundo Modal -->
+   <div class="modal-fullscreen" id="fullscreenModal">
+    <div class="modal-content">
+        <span class="close" id="closeFullscreenModal">&times;</span>
+        <h2>Crear un anuncio</h2>
+        <form id="addGroupForm">
+            <div class="form-group">
+                <label for="groupName">Título:</label>
+                <input type="text" id="groupName" placeholder="Nombre del grupo" required>
+            </div>
+            <div class="form-group">
+                <label for="groupCategory">Etiquetas:</label>
+                <input type="text" id="groupCategory" placeholder="Ej: Tecnología, Educación" required>
+            </div>
+            <div class="form-group">
+                <label for="groupLink">URL del anuncio:</label>
+                <input type="url" id="groupLink" placeholder="Ej: https://tugrupo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="groupPortada">Imagen de portada:</label>
+                <input type="url" id="groupPortada" placeholder="URL de la portada" required>
+            </div>
+            <button type="submit">Crear Anuncio</button>
+        </form>
+    </div>
+</div>
+
+  <!-- Pop-up para crear un post -->
+     <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Crear un nuevo post</h2>
+            <form id="postForm">
+                <label for="postName">Nombre:</label>
+                <input type="text" id="postName" name="postName" required placeholder="Solo podras ponerlo una vez.">
+                
+                <label for="postTitle">Título:</label>
+                <input type="text" id="postTitle" name="postTitle" required>
+                
+                <label for="postContent">Contenido:</label>
+                <textarea id="postContent" name="postContent" rows="4" required></textarea>
+                
+                <label for="postImage">Imagen URL:</label>
+                <input type="url" id="postImage" name="postImage">
+                
+                <button type="submit" class="btn-submit">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay para visualizar la imagen -->
+    <div id="imageOverlay" class="image-overlay">
+        <span class="close-overlay">&times;</span>
+        <img id="overlayImage" class="overlay-image" src="" alt="Imagen del post">
+        <a id="downloadLink" class="download-link" href="#" download>Descargar Imagen</a>
+    </div>
+</body>
